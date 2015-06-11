@@ -1,0 +1,1 @@
+web: gunicorn --pid /tmp/ss-gunicorn.pid --log-level debug --log-file /var/log/fantasy_api.log -b $HOST:$PORT 'manage:create_and_config_app()'

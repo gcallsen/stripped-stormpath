@@ -1,0 +1,45 @@
+version: 1
+
+# see http://victorlin.me/posts/2012/08/26/good-logging-practice-in-python
+disable_existing_loggers: False
+
+formatters:
+  simple:
+    format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    datefmt: '%Y/%m/%d %H:%M:%S'
+
+# Logging handler definitions, defines action based on level
+handlers:
+  consoleFull:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+
+loggers:
+
+  # Application Modules
+  apps:
+    level: DEBUG
+    handlers: [consoleFull]
+    # handlers: [consoleFull, fullFile, errorFile]
+    propagate: False
+
+  # Bin modules
+  bin:
+    level: DEBUG
+    handlers: [consoleFull]
+    propagate: False
+
+  # Lib modules
+  lib:
+    level: DEBUG
+    handlers: [consoleFull]
+    propagate: False
+
+# Root level logger, captures everything DEBUG and above.
+# Logging level of individual processes is set in procfile, logging level
+# of application set in manage.py
+# root:
+#   level: DEBUG
+#   handlers: [consoleFull]

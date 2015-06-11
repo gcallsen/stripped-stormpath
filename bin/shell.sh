@@ -1,0 +1,1 @@
+honcho run python ./manage.py shell

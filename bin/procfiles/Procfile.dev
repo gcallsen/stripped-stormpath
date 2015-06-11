@@ -1,0 +1,1 @@
+web: gunicorn --pid /tmp/ss-gunicorn.pid --log-level debug -b $HOST:$PORT 'manage:app'

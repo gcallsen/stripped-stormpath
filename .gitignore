@@ -1,0 +1,6 @@
+tmp
+.env*
+*.pyc
+*.rdb
+stdout
+*.gpg

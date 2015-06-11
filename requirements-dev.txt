@@ -1,0 +1,5 @@
+watchdog
+ipython
+honcho==0.5.0
+numpy==1.9.1
+pandas==0.15.2

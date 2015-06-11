@@ -1,0 +1,1 @@
+tail -f /var/log/fantasy_api.log
